@@ -1,0 +1,31 @@
+n = int(input())
+sieve = [False, False] + [True]*(n-1)
+primes = []
+for i in range(2, n+1) :
+    if sieve[i] :
+        primes.append(i)
+    for j in range(i*2, n+1, i) :
+        sieve[j] = False
+
+print(sieve)
+print(primes)
+print(len(primes))
+
+print(" 함수화 하기=========================================")
+
+def cntPrimes2(n) :
+    sieve = [False, False]+[True]*(n-1)
+    cnt = 0
+    for i in range(2, n+1) :
+        if (sieve[i]) :
+            cnt+=1
+        for j in range(i*2, n+1, i) :
+            sieve[j] = False
+    return cnt
+n = int(input())
+print(cntPrimes2(n))
+
+# 에라토스테네스의 체 
+# 0과1은 소수가 아니므로 False 처리해둔다.
+# 그 이후 숫자에 대해서는 True처리를 하고 배수를 제거해주는 for문을 만든다. 
+# range에서 마지막칸 간격을 이용한다. range(start, stop, 간격(i, 배수 간격))
