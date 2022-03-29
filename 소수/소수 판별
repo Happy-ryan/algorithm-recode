@@ -1,0 +1,46 @@
+
+n = int(input())
+
+is_prime = True
+for i in range(2, n) :
+    if (n%i == 0) :
+        is_prime = False
+        break
+if is_prime :
+    print(n,"은 소수입니다.")
+else :
+    print(n,"은 합성수입니다.")
+
+print("========================================1")
+# 함수를 활용한 소수의 판별
+
+def isPrime(n) :
+    for i in range(2, n) :
+        if (n%i==0) :
+            return False
+    return True
+
+n = int(input())
+if isPrime(n) :
+    print(n,"소수입니다.")
+else :
+    print(n,"합성수입니다.")
+
+print("========================================2")
+# 1과 2의 방법은 n-1까지 전부 나눠서 약수를 확인하기 때문에 
+# 시간이 매우 많이 걸리게 된다.
+# 따라서 우리는 n-1까지 전수로 약수를 찾는게 아니라 
+# 하나라도 약수(1과 자기자신 제외)가 있다면 소수가 아니므로 범위를 좁힐 수 있다.
+# 약수는 짝을 이루므로 우선 절반으로 줄일 수 있지만 정가운데에는 루트n이 존재
+# 따라서 루트n까지만 확인한다면 나머지는 짝을 이루니 우리가 고려할 필요가 없어진다.
+from math import *
+def isPrime2(n) :
+    for i in range(2, floor(sqrt(n)+1)) : # floor(3.14) = 3 / ceil(3.14)=4
+        if n % i == 0 :
+            return False
+        return True
+n = int(input())
+if isPrime2(n) :
+    print(n,"소수입니다.")
+else :
+    print(n,"합성수입니다.")
