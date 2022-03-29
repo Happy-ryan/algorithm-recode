@@ -13,3 +13,21 @@ for j in range(len(arr)) :
     sum += arr[j]
 print(sum)
 print(arr[j])
+
+print("-----------------------------------------------------")
+from math import *
+def isPrime2(n) :
+    for i in range(2, floor(sqrt(n)+1)) : # floor(3.14) = 3 / ceil(3.14)=4
+        if n % i == 0 :
+            return False
+        return True
+n = int(input())
+
+primes = []
+for i in range(2, 101) :
+	if not isPrime2(i) :
+		continue
+	primes.append(i)
+
+print(primes)
+print(len(primes))
