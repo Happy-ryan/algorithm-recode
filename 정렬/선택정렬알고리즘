@@ -1,0 +1,12 @@
+arr = list(map(int, input().split()))
+
+for i in range(len(arr)-1) : 
+    min_idx = i                         #가장 적은 값을 갖는 인덱스를 가정한다.
+    for j in range(i+1, len(arr)) :
+        if arr[j] < arr[min_idx] :  # 가장적은 값을 갖는다고 가정하고 i+1 부터 len(arr)까지 j를 포문을 돌리면서 전부 비교를 했을 때 가정 적은 값을 갖는다고 가정한 값이 
+                                    # 어느 j에 대해서 크다면 min_idx = j로 바꿔야 한다. j에 있는 아이가 더 작다는 것이니까. 그렇게 계속 비교를 해서 i값과 j값을 조건 충족시
+                                    # 변경한다. 
+            min_idx = j
+    arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+print(arr)
