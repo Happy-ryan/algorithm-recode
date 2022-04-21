@@ -1,0 +1,33 @@
+N = int(input())
+arr = [input() for _ in range(N)] # list comprehension
+arr = list(set(arr))
+arr = sorted([(len(s), s) for s in arr])
+arr = [x[1] for x in arr]
+print(*arr, sep='\n') 
+
+# arr = sorted(arr, key=lambda x: (len(x), x))
+
+
+# arr = ['ccc', 'a', 'aa', 'b', ]
+# arr = [(len(x), x) for x in arr]
+# print(arr)
+# arr = sorted(arr)
+# print(arr)
+# arr = [x[1] for x in arr]
+
+# sqr = lambda x: x ** 2
+
+print("===============================================1")
+# 버켓소트 
+# bucket = [[] for _ in range(51)]
+
+# for s in arr:
+#     bucket[len(s)].append(s)
+
+# for i in range(51):
+#     for s in bucket[i]:
+#         print(s)
+
+# print(bucket)
+# bucket[0].append(3)
+# print(bucket)
