@@ -1,0 +1,20 @@
+https://www.acmicpc.net/problem/7568
+
+#result = [len([1 for y in arr if x[0] < y[0] and x[1] < y[1]]) + 1 for x in arr]
+#print(*result)
+2~4
+# for x in arr:
+#     cnt = len([1 for y in arr if x[0] < y[0] and x[1] < y[1]])
+#     result.append(cnt + 1)
+# print(*result)
+
+==============================================================
+https://www.acmicpc.net/problem/11650
+# y를 먼저 비교하고 x 증가하는 순서 정렬하기
+N = int(input())
+arr = [tuple(map(int,input().split())) for _ in range(N)]
+
+arr = sorted(arr, key=lambda x: (x[1], x[0]))
+
+for row in arr:
+    print(*row)
