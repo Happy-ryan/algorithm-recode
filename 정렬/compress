@@ -1,0 +1,23 @@
+T = int(input())
+for t in range(T):
+    s = input()
+    # unique: aaa > a 로 압축하기
+    ss = [s[0]] # ss의 맨 뒤가 cur
+    for i in range(1, len(s)):
+        if s[i] == ss[-1]: # 구간의 시작이 아니다
+            continue
+        else: # 구간의 시작이다
+            ss.append(s[i])
+            
+            
+def compress(arr):
+    brr = [arr[0]]
+    for i in range(1, len(arr)):
+        if arr[i] == brr[-1]: # 구간의 시작이 아니다
+            continue
+        else: # 구간의 시작이다
+            brr.append(arr[i])
+    return brr
+    
+    arr = sorted(arr)
+    arr = compress(arr)
