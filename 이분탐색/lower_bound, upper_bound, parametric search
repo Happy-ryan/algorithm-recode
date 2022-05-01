@@ -1,0 +1,45 @@
+# https://www.acmicpc.net/problem/1920
+# https://www.acmicpc.net/problem/10815
+
+# N = int(input())
+# arr = sorted(list(map(int, input().split())))
+
+# M = int(input())
+# qs = list(map(int, input().split()))
+
+# def lower_bound(arr, x): #arr 에서 x를 찾는 함수
+#     l, r = -1, len(arr)
+#     while r - l != 1:
+#         m = (l + r) // 2 # m 도 index
+#         if x > arr[m]:
+#             l = m
+#         else:
+#             r = m
+#     return r
+
+# for x in qs:
+#     idx = lower_bound(arr, x)
+#     if idx < len(arr) and arr[idx] == x:
+#         print(1)
+#     else:
+#         print(0)
+
+
+# # https://www.acmicpc.net/problem/10816
+
+
+# # parametric search
+
+
+def sqrt(x):
+    l, r = 0,x
+    eps = 1e-9 # 1e3 = 1000
+    while r - l > eps:
+        m = (l + r) / 2
+        if m * m > x:
+            r = m
+        else:
+            l = m
+    return l
+
+print(sqrt(2))
