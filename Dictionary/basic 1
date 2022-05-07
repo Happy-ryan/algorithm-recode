@@ -1,0 +1,65 @@
+# # dict[2] = 20
+# # dict[3] = 50
+
+# # dict['arr'] = [1, 2, 3]
+
+# # print(dict)
+
+# # # for x in dict:
+# # #     print(dict[x])
+# # for x in dict.items():
+# #     # print(x)
+# #     key, value = x
+# #     print(key, value)
+
+
+# # # ab = (2, 3)
+# # # a, b = ab
+
+# keys = [1, 2, 3, 4]
+# values = [10, 20, 30, 40]
+
+# # for key in keys:
+# #     dict[key] = values[]
+
+# # for i in range(len(keys)):
+# #     dict[keys[i]] = values[i]
+
+# print(keys)
+# print(values)
+# print(list(zip(keys, values)))
+
+# # for key, value in zip(keys, values):
+# #     dict[key] = value
+
+# dict = {key: value for key, value in zip(keys, values)}
+
+# print(dict)
+
+# del dict[3]
+# if 3 in dict:
+#     x = dict.pop(3, None)
+
+# print(dict)
+# print(x)
+
+# https://www.acmicpc.net/problem/11478
+
+# S = input()
+
+# arr = []
+
+# for s in range(len(S)):
+#     subS = ""
+#     for e in range(s, len(S)): # N^2 = 1e6
+#         subS += S[e] # O(1) slice 대신 하나씩 더함
+#         arr.append(subS)
+#         # print(subS)
+
+#         # arr.append(S[s:e + 1]) # 1000
+#         # print(S[s:e])
+#         # 1. S[s:e] 슬라이싱 시간 복잡도 O(슬라이싱 길이)
+#         # 2. append 하는 문자열이 너무 많음 : 메모리 초과
+
+# arr = set(arr)
+# print(len(arr))
