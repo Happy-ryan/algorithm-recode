@@ -3,3 +3,20 @@ arr = [input().split() for _ in range(T)]
 arr = [[a, int(b), int(c), int(d)] for a, b, c, d in arr]
 
 # 입력에 str과 int가 동시에 존재할 경우 int는 int로 타입을 변경시키는 경우에 사용하는 콛,
+
+
+#https://www.acmicpc.net/problem/1302
+
+N = int(input())
+
+cnt = {}
+for _ in range(N):
+    s = input()
+    if s not in cnt:
+        cnt[s] = 0
+    cnt[s] += 1
+
+arr = list(cnt.items())
+print(arr)
+ret = min([(-cnt, name) for name, cnt in arr])
+print(ret[1])
