@@ -1,0 +1,9 @@
+def split_row(row):
+    s, e = 0, 0
+    ret = []
+    while e <= len(row):
+        if e == len(row) or row[e] == 'X':
+            ret.append(row[s:e])
+            s = e + 1
+        e += 1
+    return ret
