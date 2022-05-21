@@ -1,0 +1,74 @@
+# https://www.acmicpc.net/problem/17478
+
+N = int(input())
+
+def f(n, prefix):
+    print(prefix + '"재귀함수가 뭔가요?"')
+    if n == 0:
+        print(prefix + '"재귀함수는 자기 자신을 호출하는 함수라네"')
+    else:
+        print(prefix + '"잘 들어보게. 옛날옛날 한 산 꼭대기에 이세상 모든 지식을 통달한 선인이 있었어.')
+        print(prefix + '마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.')
+        print(prefix + '그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어."')
+        f(n-1, prefix + '____')
+
+    print(prefix + '라고 답변하였지.')
+    # return
+
+print('어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.')
+f(N, '')
+
+# return
+
+# 어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.
+# "재귀함수가 뭔가요?"
+# "잘 들어보게. 옛날옛날 한 산 꼭대기에 이세상 모든 지식을 통달한 선인이 있었어.
+# 마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.
+# 그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어."
+# ____"재귀함수가 뭔가요?"
+# ____"잘 들어보게. 옛날옛날 한 산 꼭대기에 이세상 모든 지식을 통달한 선인이 있었어.
+# ____마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.
+# ____그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어."
+# ________"재귀함수가 뭔가요?"
+# ________"재귀함수는 자기 자신을 호출하는 함수라네"
+# ________라고 답변하였지.
+# ____라고 답변하였지.
+# 라고 답변하였지.
+
+# __main__ : 3 18 19 return
+  # f(2, '') : 6 10 11 12 13 15 return
+    # f(1, '____') : 6 10 11 12 13 15 return
+      # f(0, '________') : 6 7 8 15 return
+
+def factorial(n) :
+    if n==0 or n==1 :
+        return 1
+    else :
+        return  n * factorial(n-1)
+
+n = int(input())
+print(factorial(n))
+
+# __main__: 49(n=3) 50(print(3 * 2 * 1) -> print(6)) return
+    # f(3): 47(return 3*(2*1))
+        # f(2): 47(return 2 * 1)
+           # f(1): 45(return 1)
+
+n = int(input())
+
+def fibonaci(n) :
+    if n == 0 :
+        return 0
+    elif n==1 or n==2 :
+        return 1
+    else :
+        return fibonaci(n-1) + fibonaci(n-2)
+
+print(fibonaci(n))
+
+# __main__: 57(n=4) 67(print([ f(4)->3 ]) -> print(3)) return
+    # f(4): 65(return [  f(3)->2  ] + [  f(2)->1  ] -> return 3)
+        # f(3): 65(return [  f(2)->1  ] + [  f(1)->1  ] -> return 2)
+            # f(2): 63(return 1)
+            # f(1): 63(return 1)
+        # f(2): 63(return 1)
