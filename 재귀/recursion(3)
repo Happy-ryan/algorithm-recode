@@ -1,0 +1,20 @@
+def f(w, y, x, board): # 정한 크기의 사각형을 그리고, 더 작은 모양으로 안을 채우는 함수
+    if w < 0: return
+    for i in range(y, y + w):
+        board[i][x] = '*' # 왼쪽 |
+        board[i][x + w - 1] = '*' # 오른쪽 |
+    for j in range(x, x + w):
+        board[y][j] = '*'
+        board[y + w - 1][j] = '*'
+
+    f(w-4, y+2, x+2, board)
+    
+N = int(input())
+W = N * 4 - 3
+board = [[' ' for _ in range(W)] for _ in range(W)]
+
+f(W, 0, 0, board)
+
+for row in board:
+    # print(''.join(row))
+    print(*row, sep='')
